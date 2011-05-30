@@ -56,6 +56,7 @@ typedef enum SFBPopoverPosition SFBPopoverPosition;
 {
 @private
 	NSView *_popoverContentView;
+    BOOL _canBecomeKeyWindow;
 }
 
 // ========================================
@@ -86,5 +87,7 @@ typedef enum SFBPopoverPosition SFBPopoverPosition;
 - (void) setViewMargin:(CGFloat)viewMargin;
 - (NSColor *) popoverBackgroundColor;
 - (void) setPopoverBackgroundColor:(NSColor *)backgroundColor;
+
+- (void) setCanBecomeKeyWindow:(BOOL)canBeconeKeyWindow;
 
 @end

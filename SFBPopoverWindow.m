@@ -47,6 +47,7 @@
 		[self setAlphaValue:1];
 		[self setOpaque:NO];
 		[self setHasShadow:YES];
+        [self setCanBecomeKeyWindow:YES];
 	}
 
 	return self;
@@ -69,9 +70,14 @@
 	return [[self popoverWindowFrame] frameRectForContentRect:contentRect];
 }
 
+- (void) setCanBecomeKeyWindow:(BOOL)canBeconeKeyWindow
+{
+    _canBecomeKeyWindow = canBeconeKeyWindow;
+}
+
 - (BOOL) canBecomeKeyWindow
 {
-	return YES;
+	return _canBecomeKeyWindow;
 }
 
 - (BOOL) canBecomeMainWindow
